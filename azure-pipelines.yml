@@ -43,7 +43,7 @@ steps:
 - task: AzureFileCopy@5
   inputs:
     SourcePath: '${env:BUILD.ARTIFACTSTAGINGDIRECTORY}/*'
-    azureSubscription: 'Visual Studio Enterprise Subscription(dba20533-24c8-4a20-87ad-3d79ac546216)'
+    azureSubscription: 'azureSubscription'
     Destination: 'AzureBlob'
     storage: '$(stg_account)'
     ContainerName: '$(stg_container)'
