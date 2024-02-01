@@ -36,7 +36,6 @@ steps:
 
 - task: CopyFiles@2
   inputs:
-    SourceFolder: 'Project'
     Contents: '*.csdef'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
 
