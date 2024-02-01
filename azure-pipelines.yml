@@ -43,18 +43,18 @@ steps:
 # Upload the cloud service via Azure File Copy
 - task: AzureFileCopy@5
   inputs:
-    SourcePath: '$(Build.ArtifactsStagingDirectory) /*'        # you can set $(Build.ArtifactsStagingDirectory) as Build part for output of the MSBuild.
-    azureSubscription: xxx                                     # the name of service connector
+    SourcePath: '$(Build.ArtifactsStagingDirectory) /*'
+    azureSubscription: 'azureSubscription'
     Destination: 'AzureBlob'
-    storage: $(stg_account)                                    # variable stg_account
-    ContainerName: $(stg_container)                            # variable stg_container
-    BlobPrefix: $(stg_prefix)                                  # variable stg prefix is $[format('{0:yyyyMMddHHmm}', pipeline.startTime)]
-    AdditionalArgumentsForBlobCopy: '--recursive'              # recursively copy the files in this directory
+    storage: '$(stg_account)'
+    ContainerName: '$(stg_container)'
+    BlobPrefix: '$(stg_prefix)'
+    AdditionalArgumentsForBlobCopy: '--recursive'
 # Generate temp SAS token for 5 mins
 - task: AzurePowerShell@5                                                     # please make sure the Azure PowerShell contains the module of Az and AzureRm.
   name: GenerateSasToken
   inputs:
-    azureSubscription: xxx                                                    # the name of service connector
+    azureSubscription: 'azureSubscription'
     ScriptType: 'InlineScript'
     Inline: |
       $account_name = ${env:STG_ACCOUNT}
@@ -69,14 +69,14 @@ steps:
 #Azure Resource Manager template deployment
 - task: AzureResourceManagerTemplateDeployment@3                               
   inputs:
-    deploymentScope: 'Resource Group'                                           # resource group level deployment
-    azureResourceManagerConnection: xxx                                         # the name of service connector
-    subscriptionId: xxx                                                         # subscription id of the service connector
+    deploymentScope: 'Resource Group'
+    azureResourceManagerConnection: 'azureSubscription'
+    subscriptionId: 'dba20533-24c8-4a20-87ad-3d79ac546216'
     action: 'Create Or Update Resource Group'
-    resourceGroupName: 'rg-002'                                                                               
+    resourceGroupName: 'rg-002'
     location: 'Australia Central'
     templateLocation: 'Linked artifact'
     csmFile: 'Template/CSES.template.json'
     csmParametersFile: 'Template/CSES.parameter.json'
-    overrideParameters: '-packageSasUri $(cspkg) -configurationSasUri $(cscfg) -cloudServiceName cses4test002 -deploymentLabel deploy$(stg_prefix)' # overwrite some parameters of template.
-    deploymentMode: 'Incremental'  
+    overrideParameters: '-packageSasUri $(cspkg) -configurationSasUri $(cscfg) -cloudServiceName cses4test002 -deploymentLabel deploy$(stg_prefix)'
+    deploymentMode: 'Incremental'
