@@ -40,7 +40,6 @@ steps:
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
 
 # Upload the cloud service via Azure File Copy
-- task: AzureFileCopy@5
 - task: AzureFileCopy@3
   inputs:
     SourcePath: '${env:BUILD.ARTIFACTSTAGINGDIRECTORY}/*'
