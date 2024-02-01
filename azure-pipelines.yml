@@ -48,7 +48,6 @@ steps:
     storage: '$(stg_account)'
     ContainerName: '$(stg_container)'
     BlobPrefix: '$(stg_prefix)'
-    AdditionalArgumentsForBlobCopy: '--recursive'
 # Generate temp SAS token for 5 mins
 - task: AzurePowerShell@5                                                     # please make sure the Azure PowerShell contains the module of Az and AzureRm.
   name: GenerateSasToken
