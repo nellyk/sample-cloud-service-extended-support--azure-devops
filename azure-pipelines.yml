@@ -15,7 +15,7 @@ steps:
     command: 'restore'
     restoreSolution: '**/*.sln'
     feedsToUse: 'select'
-    vstsFeed: xxx
+    vstsFeed: '88db1bee-c1a6-414b-86b3-643c8fed5097'
 
 # 2. Use MS build to output the cloud service project configuration and package to the temporary location of the local agent.
 
