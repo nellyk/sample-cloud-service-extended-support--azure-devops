@@ -40,10 +40,10 @@ steps:
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
 
 # Upload the cloud service via Azure File Copy
-- task: AzureFileCopy@5
+- task: AzureFileCopy@3
   inputs:
     SourcePath: '${env:BUILD.ARTIFACTSTAGINGDIRECTORY}/*'
-    azureSubscription: 'azureSubscription'
+    azureSubscription: 'Visual Studio Enterprise Subscription(1)(dba20533-24c8-4a20-87ad-3d79ac546216)'
     Destination: 'AzureBlob'
     storage: '$(stg_account)'
     ContainerName: '$(stg_container)'
