@@ -42,7 +42,7 @@ steps:
 # Upload the cloud service via Azure File Copy
 - task: AzureFileCopy@5
   inputs:
-    SourcePath: '$(Build.ArtifactsStagingDirectory) /*'
+    SourcePath: '$(Build.ArtifactStagingDirectory)/*'
     azureSubscription: 'Visual Studio Enterprise Subscription(dba20533-24c8-4a20-87ad-3d79ac546216)'
     Destination: 'AzureBlob'
     storage: '$(stg_account)'
