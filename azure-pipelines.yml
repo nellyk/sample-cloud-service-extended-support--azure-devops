@@ -64,14 +64,7 @@ steps:
       $cscfg = ${env:URL_CSCFG} + $sas
       Write-Host ("##vso[task.setvariable variable=cspkg]$cspkg")             # output $cspkg in PowerShell to global variable cspkg
       Write-Host ("##vso[task.setvariable variable=cscfg]$cscfg")             # output $cscfg in PowerShell to global variable cscfg
-      Write-Host "cscfg= $cscfg";
-      Write-Host "cspkg= $cspkg";
-    azurePowerShellVersion: 'LatestVersion'
-#Azure Resource Manager template deployment
-#   https://teststnellk.blob.core.windows.net/container-storageaccount/202402021413/SDKSample/CreateCloudService/CreateCloudService/Resources/HelloWorldTest_WebRole_D2_V2.cspkg
-#         https://teststnellk.blob.core.windows.net/container-storageaccount/202402021404/ServiceConfiguration.Cloud.cscfg
-#         cscfg= https://teststnellk.blob.core.windows.net/container-storageaccount/202402021434/ServiceConfiguration.Cloud
-# cspkg= https://teststnellk.blob.core.windows.net/container-storageaccount/202402021434/ContosoCS    
+    azurePowerShellVersion: 'LatestVersion'  
 - task: AzureResourceManagerTemplateDeployment@3                               
   inputs:
     deploymentScope: 'Resource Group'
