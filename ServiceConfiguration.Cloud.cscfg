@@ -16,7 +16,7 @@
     <Instances count="1" />
   </Role>
   <NetworkConfiguration>
-    <VirtualNetworkSite name="contosocsVNet" />
+    <VirtualNetworkSite name="cses4test002nellyktestVNet" />
     <AddressAssignments>
       <InstanceAddress roleName="WebRole1">
         <Subnets>
