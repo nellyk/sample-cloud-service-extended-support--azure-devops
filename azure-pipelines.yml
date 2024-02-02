@@ -71,7 +71,7 @@ steps:
 #   https://teststnellk.blob.core.windows.net/container-storageaccount/202402021413/SDKSample/CreateCloudService/CreateCloudService/Resources/HelloWorldTest_WebRole_D2_V2.cspkg
 #         https://teststnellk.blob.core.windows.net/container-storageaccount/202402021404/ServiceConfiguration.Cloud.cscfg
 #         cscfg= https://teststnellk.blob.core.windows.net/container-storageaccount/202402021434/ServiceConfiguration.Cloud
-# cspkg= https://teststnellk.blob.core.windows.net/container-storageaccount/202402021434/ContosoCS
+# cspkg= https://teststnellk.blob.core.windows.net/container-storageaccount/202402021434/ContosoCS    
 - task: AzureResourceManagerTemplateDeployment@3                               
   inputs:
     deploymentScope: 'Resource Group'
