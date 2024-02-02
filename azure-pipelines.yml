@@ -72,7 +72,7 @@ steps:
     azureResourceManagerConnection: 'azureSubscription'
     subscriptionId: 'dba20533-24c8-4a20-87ad-3d79ac546216'
     action: 'Create Or Update Resource Group'
-    resourceGroupName: 'rg-002'
+    resourceGroupName: 'cloud-shell-storage-westeurope'
     location: 'Australia Central'
     templateLocation: 'Linked artifact'
     csmFile: 'ContosoCS.template.json'
