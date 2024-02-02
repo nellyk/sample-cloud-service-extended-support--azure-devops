@@ -64,6 +64,8 @@ steps:
       $cscfg = ${env:URL_CSCFG} + $sas
       Write-Host ("##vso[task.setvariable variable=cspkg]$cspkg")             # output $cspkg in PowerShell to global variable cspkg
       Write-Host ("##vso[task.setvariable variable=cscfg]$cscfg")             # output $cscfg in PowerShell to global variable cscfg
+      Write-Host "cscfg= $cscfg";
+      Write-Host "cspkg= $cspkg";
     azurePowerShellVersion: 'LatestVersion'
 #Azure Resource Manager template deployment
 - task: AzureResourceManagerTemplateDeployment@3                               
