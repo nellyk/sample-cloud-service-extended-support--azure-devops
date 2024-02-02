@@ -1,3 +1,8 @@
+# Sample of Cloud services extend support with Azure devops 
+
+- Uses this sample https://github.com/Azure-Samples/cloud-services-extended-support/tree/main/101-cses-multirole-rdp 
+- Follows the tutorial from [https://learn.microsoft.com/en-gb/azure/cloud-services-extended-support/deploy-prerequisite](https://learn.microsoft.com/en-us/troubleshoot/azure/cloud-services/azure-devops-publish-cloud-service-extended)
+
 # 101-cses-multirole-rdp
 
 	• Cloud Services (extended support) is a new Azure Resource Manager based deployment model for Azure Cloud Services product and is currently in public preview.
