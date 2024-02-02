@@ -77,5 +77,5 @@ steps:
     templateLocation: 'Linked artifact'
     csmFile: 'ContosoCS.template.json'
     csmParametersFile: 'ContosoCS.parameter.json'
-    overrideParameters: '-packageSasUri $(cspkg) -configurationSasUri $(cscfg) -cloudServiceName cses4test002 -deploymentLabel deploy$(stg_prefix)'
+    overrideParameters: '-packageSasUri $(cspkg) -configurationSasUri $(cscfg) -cloudServiceName cses4test002nellyktest -deploymentLabel deploy$(stg_prefix)'
     deploymentMode: 'Incremental'
